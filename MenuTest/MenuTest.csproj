@@ -1,0 +1,128 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7E083ED-A05C-4552-AF59-8AAE7B59F6EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MenuTest</RootNamespace>
+    <AssemblyName>MenuTest</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MenuTest.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HistoryActionList.cs" />
+    <Compile Include="IHistoryAction.cs" />
+    <Compile Include="LineTool.cs" />
+    <Compile Include="Surface.cs" />
+    <Compile Include="Command\BaseCommand.cs" />
+    <Compile Include="Command\CommandManager.cs" />
+    <Compile Include="ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm.Designer.cs">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITool.cs" />
+    <Compile Include="MainToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\CommandMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\CommandMenuButtonFolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\CommandMenuItemFolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\CommandMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="MainMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PenTool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SurfaceCopyAction.cs" />
+    <Compile Include="ToolPaletteStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiResourceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="toolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
